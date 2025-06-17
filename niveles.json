@@ -1,0 +1,35 @@
+[
+    {
+        "nivel": 1,
+        "palabras": [
+            {"palabra": "PERRO", "pista": "Animal que ladra"},
+            {"palabra": "GATO", "pista": "Animal que maúlla"},
+            {"palabra": "NARIZ", "pista": "Parte de la cara para oler"},
+            {"palabra": "SALTA", "pista": "Lo que hace una rana"},
+            {"palabra": "LAPIZ", "pista": "Lo usás para escribir y se puede borrar"},
+            {"palabra": "CARTA", "pista": "Mensaje en papel enviado por correo"}
+        ]
+    },
+    {
+        "nivel": 2,
+        "palabras": [
+            {"palabra": "PLANTA", "pista": "Ser vivo que realiza fotosíntesis"},
+            {"palabra": "ARBOL", "pista": "Planta grande con tronco"},
+            {"palabra": "SOLAR", "pista": "Relacionado al Sol"},
+            {"palabra": "LUNAR", "pista": "Relacionado a la Luna"},
+            {"palabra": "RATON", "pista": "Dispositivo o animal pequeño"},
+            {"palabra": "CASAS", "pista": "Lugares donde viven las personas"}
+        ]
+    },
+    {
+        "nivel": 3,
+        "palabras": [
+            {"palabra": "AMIGO", "pista": "Persona cercana y querida"},
+            {"palabra": "VIAJE", "pista": "Desplazamiento a otro lugar"},
+            {"palabra": "JUEGO", "pista": "Actividad para divertirse"},
+            {"palabra": "RIEGO", "pista": "Acción de dar agua a las plantas"},
+            {"palabra": "TIGRE", "pista": "Felino grande y rayado"},
+            {"palabra": "FRESA", "pista": "Fruta roja y pequeña"}
+        ]
+    }
+]
