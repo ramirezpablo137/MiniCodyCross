@@ -1,35 +1,37 @@
-[
+{
+  "niveles": [
     {
-        "nivel": 1,
-        "palabras": [
-            {"palabra": "PERRO", "pista": "Animal que ladra"},
-            {"palabra": "GATO", "pista": "Animal que maúlla"},
-            {"palabra": "NARIZ", "pista": "Parte de la cara para oler"},
-            {"palabra": "SALTA", "pista": "Lo que hace una rana"},
-            {"palabra": "LAPIZ", "pista": "Lo usás para escribir y se puede borrar"},
-            {"palabra": "CARTA", "pista": "Mensaje en papel enviado por correo"}
-        ]
+      "palabras": ["PERRO", "CASA", "GATO", "OSO", "RANA", "LORO"],
+      "pistas": [
+        "Animal que ladra",
+        "Lugar donde vives",
+        "Animal que maúlla",
+        "Animal grande y peludo",
+        "Anfibio saltarín",
+        "Ave que habla"
+      ]
     },
     {
-        "nivel": 2,
-        "palabras": [
-            {"palabra": "PLANTA", "pista": "Ser vivo que realiza fotosíntesis"},
-            {"palabra": "ARBOL", "pista": "Planta grande con tronco"},
-            {"palabra": "SOLAR", "pista": "Relacionado al Sol"},
-            {"palabra": "LUNAR", "pista": "Relacionado a la Luna"},
-            {"palabra": "RATON", "pista": "Dispositivo o animal pequeño"},
-            {"palabra": "CASAS", "pista": "Lugares donde viven las personas"}
-        ]
+      "palabras": ["AGUA", "FUEGO", "AIRE", "TIERRA", "METAL", "MADERA"],
+      "pistas": [
+        "Líquido vital",
+        "Elemento que quema",
+        "Lo que respiras",
+        "Donde crecen las plantas",
+        "Elemento de monedas",
+        "Proviene de árboles"
+      ]
     },
     {
-        "nivel": 3,
-        "palabras": [
-            {"palabra": "AMIGO", "pista": "Persona cercana y querida"},
-            {"palabra": "VIAJE", "pista": "Desplazamiento a otro lugar"},
-            {"palabra": "JUEGO", "pista": "Actividad para divertirse"},
-            {"palabra": "RIEGO", "pista": "Acción de dar agua a las plantas"},
-            {"palabra": "TIGRE", "pista": "Felino grande y rayado"},
-            {"palabra": "FRESA", "pista": "Fruta roja y pequeña"}
-        ]
+      "palabras": ["SOL", "LUNA", "MAR", "RIO", "MONTE", "BOSQUE"],
+      "pistas": [
+        "Estrella que da luz",
+        "Satélite nocturno",
+        "Gran masa de agua salada",
+        "Corriente de agua dulce",
+        "Elevación natural de terreno",
+        "Lugar con muchos árboles"
+      ]
     }
-]
+  ]
+}
