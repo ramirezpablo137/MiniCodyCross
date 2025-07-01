@@ -50,7 +50,7 @@ MiniCodyCross/
 1. **Clonar el repositorio**
 
    ```sh
-   git clone https://github.com/tu_usuario/MiniCodyCross.git
+   git clone https://github.com/ramirezpablo137/MiniCodyCross.git
    cd MiniCodyCross
    ```
 
@@ -59,7 +59,7 @@ MiniCodyCross/
    Es necesario tener Python 3.x y [Pygame](https://www.pygame.org/) instalado.
 
    ```sh
-   pip install pygame
+   pip install requirements.txt
    ```
 
 3. **Verificar recursos**
@@ -135,7 +135,7 @@ Ana,105
 - **Autores:** Matias Roig y Pablo Ramirez
 - **Materia:** Programación I – Tecnicatura Universitaria en Programación
 - **Docente:** Martin Alejandro Garcia
-- **Año:** 2024
+- **Año:** 2025
 
 ---
 
