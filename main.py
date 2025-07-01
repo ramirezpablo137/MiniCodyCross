@@ -4,6 +4,10 @@ import ui
 import juego
 from constantes import *
 
+# Este archivo es el punto de entrada del juego, donde se inicializa Pygame,
+# se carga la música y se muestra el menú principal.
+
+
 def main():
     pygame.init()
     pygame.mixer.init()

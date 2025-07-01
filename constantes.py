@@ -1,3 +1,6 @@
+## constantes.py sirve para definir constantes que se utilizan en el juego.
+# Estas constantes incluyen dimensiones de la ventana, rutas de archivos, colores y otros parámetros.
+
 ANCHO_VENTANA = 900
 ALTO_VENTANA = 700
 

@@ -4,6 +4,16 @@ from puntuacion import guardar_puntaje
 from constantes import *
 import ui
 
+# Este archivo contiene la lógica principal del juego, incluyendo la interacción con el usuario,
+# la gestión de niveles, la entrada del teclado y la visualización de resultados.
+# Funciones auxiliares
+# Convierte una letra minúscula a mayúscula, manteniendo las letras ya mayúsculas sin cambios.
+# Si la letra no es una minúscula, se devuelve tal cual.
+# Esta función es útil para manejar la entrada del usuario y compararla con las palabras ocultas
+# sin importar el caso de las letras.
+# También maneja la letra "ñ" y su versión mayúscula "Ñ".
+
+
 def a_mayuscula(letra):
     minusculas = "abcdefghijklmnñopqrstuvwxyz"
     mayusculas = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
@@ -117,18 +127,25 @@ def jugar(pantalla):
                             palabra_seleccionada = None
                         else:
                             letras_usuario[palabra_seleccionada] = ""
-                            puntaje_total = max(0, puntaje_total - 5)
+                            puntaje_total = puntaje_total - 5
+                            if puntaje_total < 0:
+                                puntaje_total = 0
                             ui.mostrar_popup(pantalla, "¡Incorrecto! Intenta de nuevo.")
-            if all(completadas):
+            # Verificar si todas las palabras están completadas
+            todas_completadas = True
+            for comp in completadas:
+                if not comp:
+                    todas_completadas = False
+            if todas_completadas:
                 jugando_nivel = False
             clock.tick(30)
         # Palabra vertical del nivel listo para mostrar al final
         palabra_vertical = obtener_palabra_vertical(letras_usuario)
         palabras_ocultas.append(palabra_vertical)
-        # Si querés mostrarla después de cada nivel, descomentá:
+        
         # ui.mostrar_popup(pantalla, "Palabra oculta: " + palabra_vertical)
 
-    # Ahora sí, después de los 3 niveles, pedir el nombre y mostrar el puntaje y palabras ocultas.
+    # después de los 3 niveles, pedir el nombre y mostrar el puntaje y palabras ocultas.
     nombre = ui.pedir_nombre(pantalla)
     guardar_puntaje(nombre, puntaje_total)
     mensaje = "Puntaje final: " + str(puntaje_total)

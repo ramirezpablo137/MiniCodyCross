@@ -4,3 +4,5 @@ pablo3,145
 pablo,60
 2,120
 pablo,180
+juan,175
+lucas,185

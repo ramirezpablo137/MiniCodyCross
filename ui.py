@@ -1,6 +1,11 @@
 import pygame
 from constantes import *
 
+# Este archivo contiene la lógica de la interfaz de usuario del juego, incluyendo la carga de assets,
+# la creación de botones, los menús principales, de estadísticas y créditos, y la interacción
+# con el usuario a través de eventos de teclado y ratón.
+
+
 assets = {}
 
 def cargar_assets():
