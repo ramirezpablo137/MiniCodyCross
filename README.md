@@ -1,102 +1,164 @@
 # Mini CodyCross
 
-Juego educativo tipo crucigrama, desarrollado en Python con Pygame.
+## Descripción
+
+**Mini CodyCross** es un juego de crucigramas digital desarrollado en Python, inspirado en el clásico juego CodyCross. El objetivo es completar palabras horizontales a partir de pistas y, como desafío adicional, descubrir una palabra oculta formada por la tercera letra de cada palabra horizontal. El juego incluye un menú principal, estadísticas de los mejores puntajes, créditos, tres niveles y persistencia de puntajes. Se desarrolló como proyecto final para la materia **Programación I**.
 
 ---
 
-## 📁 Estructura del Proyecto
+## Características
 
-- `main.py` — punto de entrada, ciclo principal y navegación de menú.
-- `ui.py` — interfaz de usuario (menús, créditos, estadísticas).
-- `juego.py` — lógica central del juego.
-- `niveles.py` — carga de niveles desde JSON.
-- `puntuacion.py` — manejo de puntajes y estadísticas.
-- `niveles.json` — niveles y palabras con pistas.
-- `puntajes.txt` — archivo para los puntajes.
-- `requirements.txt` — dependencias (por ahora: pygame).
-- `assets/` — imágenes y sonidos.
-
----
-
-## 🚦 Bitácora de desarrollo (actualizá con cada avance)
-
-- **[2025-06-17]**
-  - Estructura modular creada.
-  - `requirements.txt` con pygame.
-  - `niveles.json` con tres niveles de ejemplo y formato acordado.
-  - Función en `niveles.py` para leer niveles desde JSON.
-- **[PRÓXIMO AVANCE]**
-  - Modularización de menú principal en `ui.py`.
-  - Integración del ciclo principal en `main.py`.
-  - Desarrollo inicial de la lógica de juego en `juego.py`.
+- **Interfaz gráfica** desarrollada con [Pygame](https://www.pygame.org/).
+- **3 niveles** con palabras y pistas únicas.
+- **Palabra vertical oculta** como desafío extra en cada nivel.
+- **Menú principal** interactivo con opciones de Jugar, Estadísticas, Créditos y Salir.
+- **Pantalla de créditos** y **pantalla de estadísticas** (top 10 mejores puntajes).
+- **Sistema de puntaje:** +10 por palabra acertada, -5 por error.
+- **Persistencia de datos:** niveles y pistas cargados desde `niveles.json`; puntajes guardados en `puntajes.txt`.
+- **Modularización:** código organizado en módulos para facilitar el mantenimiento y la ampliación.
 
 ---
 
-## 🧩 ¿Cómo se cargan los niveles?
+## Estructura del Proyecto
 
-- El archivo `niveles.json` contiene una lista de niveles.  
-  Cada nivel tiene una lista de palabras y pistas, así:
+```
+MiniCodyCross/
+│
+├── main.py                # Archivo principal, gestiona el flujo general y el menú.
+├── juego.py               # Lógica y renderizado del juego.
+├── ui.py                  # Interfaz de usuario: menús, créditos, estadísticas.
+├── niveles.py             # Carga y gestión de los niveles desde JSON.
+├── puntuacion.py          # Manejo y ordenamiento de puntajes.
+├── constantes.py          # Colores, rutas y parámetros globales.
+│
+├── niveles.json           # Archivo de niveles y pistas.
+├── puntajes.txt           # Archivo de puntajes guardados.
+│
+└── assets/                # Carpeta con imágenes y sonidos.
+    ├── fondo.png
+    ├── btn_jugar.png
+    ├── btn_estadisticas.png
+    ├── btn_creditos.png
+    ├── btn_salir.png
+    └── click.wav
+```
+
+---
+
+## Instalación
+
+1. **Clonar el repositorio**
+
+   ```sh
+   git clone https://github.com/tu_usuario/MiniCodyCross.git
+   cd MiniCodyCross
+   ```
+
+2. **Instalar dependencias**
+
+   Es necesario tener Python 3.x y [Pygame](https://www.pygame.org/) instalado.
+
+   ```sh
+   pip install pygame
+   ```
+
+3. **Verificar recursos**
+
+   Asegúrate de que la carpeta `assets/` tenga todas las imágenes y sonidos requeridos y que los archivos `niveles.json` y `puntajes.txt` existan en el directorio raíz.
+
+---
+
+## Ejecución
+
+Para ejecutar el juego, simplemente corre:
+
+```sh
+python main.py
+```
+
+---
+
+## Instrucciones de Juego
+
+1. **Menú Principal:**  
+   Selecciona "Jugar" para comenzar, "Estadísticas" para ver el top 10, "Créditos" para información del proyecto o "Salir".
+
+2. **Durante el Juego:**  
+   - Haz click en la palabra que deseas completar.
+   - Escribe letra por letra utilizando el teclado.
+   - Presiona Enter para validar la palabra; si es correcta, se marca en verde.
+   - Si te equivocas puedes reintentar, pero perderás puntos.
+   - Completa todas las palabras para revelar la palabra vertical oculta (formada por la tercera letra de cada palabra horizontal).
+
+3. **Al finalizar:**  
+   Ingresa tu nombre para guardar tu puntaje en el ranking.
+
+---
+
+## Formato de archivos
+
+### niveles.json
 
 ```json
-[
-  {
-    "nivel": 1,
-    "palabras": [
-      {"palabra": "PERRO", "pista": "Animal que ladra"},
-      {"palabra": "GATO", "pista": "Animal que maúlla"}
-      // ...
-    ]
-  }
-  // más niveles
-]
+{
+  "niveles": [
+    {
+      "palabras": ["CAMINO", "ANDAR", "RUTA"],
+      "pistas": [
+        "Lugar por donde se puede andar o viajar.",
+        "Acción de desplazarse a pie.",
+        "Vía por la que circulan vehículos."
+      ]
+    },
+    // ...otros niveles
+  ]
+}
 ```
 
-- Para cargar los niveles, usamos la función en `niveles.py`:
+### puntajes.txt
 
-```python
-import json
+Archivo plano donde cada línea tiene el formato:
 
-def cargar_niveles(archivo='niveles.json'):
-    with open(archivo, encoding='utf-8') as f:
-        return json.load(f)
+```
+nombre,puntaje
+```
+Ejemplo:
+```
+Juan,120
+Ana,105
 ```
 
+---
 
+## Créditos
 
-## 📝 ¿Cómo actualizar este README?
-
-Cada vez que avances:
-1. Agregá una entrada en la bitácora con la fecha y el detalle.
-2. Marcá en la lista de próximos pasos lo que terminaste.
-3. Si agregás un archivo o módulo, sumalo a la estructura del proyecto con una breve descripción.
-4. Si cambiás el formato de un archivo (ej: el JSON de niveles), documentá el nuevo formato con un ejemplo.
+- **Autores:** Matias Roig y Pablo Ramirez
+- **Materia:** Programación I – Tecnicatura Universitaria en Programación
+- **Docente:** Martin Alejandro Garcia
+- **Año:** 2024
 
 ---
 
-## 📌 Próximos pasos (ir marcando)
+## Licencia
 
-- [x] Estructura modular creada
-- [x] Archivo de dependencias
-- [x] Primeros niveles y función de carga
-- [ ] Menú principal funcional
-- [ ] Modularización total de la interfaz
-- [ ] Lógica de juego y validación de palabras
-- [ ] Guardado y visualización de puntajes
+Este proyecto es educativo y de código abierto. Puedes modificarlo y distribuirlo citando a los autores originales.
 
 ---
 
-## 👥 Autores
+## Notas Técnicas
 
-- Pablo Ramirez
-- Matias Roig
+- Se recomienda ejecutar el juego en sistemas donde la fuente `arial.ttf` esté disponible o cambiar la fuente en `constantes.py`.
+- Los recursos gráficos deben estar en la carpeta `assets/` y las rutas deben coincidir con las definidas en `constantes.py`.
+- El código está completamente modularizado para facilitar mantenimiento y ampliaciones futuras.
 
 ---
 
-## ✉️ Contacto
+## ¿Cómo contribuir?
 
-- Tecnicatura universitaria en programacion, Programacion I, 2025.
+1. Haz un fork del repositorio.
+2. Realiza tus cambios o mejoras en una rama nueva.
+3. Abre un Pull Request con una descripción clara de tu aporte.
+
 ---
 
-> **Consejo:**  
-> Actualizá este README cada vez que avances o modifiques algo importante.  
-> Es clave para la defensa y el trabajo en equipo.
+¡Esperamos que disfrutes Mini CodyCross!
